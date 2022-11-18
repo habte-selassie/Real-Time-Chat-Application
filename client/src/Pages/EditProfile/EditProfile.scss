@@ -1,0 +1,81 @@
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+
+.edit-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 0;
+  background: rgba(51, 51, 51, 0.932);
+  width: 80%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 2rem;
+  border-radius: 4rem;
+
+  h2 {
+    margin: 2rem 0 1rem 0;
+  }
+
+  .edit-pic {
+    width: 30rem;
+    height: 30rem;
+    object-fit: contain;
+    background: black;
+    margin: 1rem;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    color: white;
+  }
+  Input[type='text'],
+  Input[type='displayEmail'] {
+    width: 30rem;
+    margin-bottom: 0.4rem;
+    font-size: 1.8rem;
+    padding: 0.1rem;
+  }
+
+  .link {
+    margin-bottom: 4rem;
+    font-size: 1.8rem;
+    text-decoration: none;
+    padding: 0.4rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    color: #ddd;
+    background: rgb(170, 71, 71);
+    transition: all 0.2s ease;
+    &:hover {
+      background: rgb(173, 0, 0);
+      box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.466);
+    }
+  }
+
+  .image-uploaders {
+    display: flex;
+
+    @media screen and (max-width: $medium) {
+      display: block;
+    }
+
+    .uploader {
+      margin: 4rem 0;
+    }
+  }
+  .submit-btn {
+    margin-top: 1rem;
+    font-size: 2rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.5rem;
+    background: rgb(170, 71, 71);
+    color: #ddd;
+    border: none;
+    transition: all 0.2s ease;
+    &:hover {
+      background: rgb(173, 0, 0);
+      box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.466);
+    }
+  }
+}

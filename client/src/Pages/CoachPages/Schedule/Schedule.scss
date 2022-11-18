@@ -1,0 +1,315 @@
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+
+.schedule-container {
+  margin-top: 5rem;
+
+  .large-schedule {
+    @media screen and (max-width: $medium) {
+      overflow: hidden;
+      position: relative;
+      max-width: 10rem;
+    }
+  }
+  .schedule-spacer {
+    height: 25rem;
+  }
+  .ctrl-panel {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: rgba(211, 211, 211, 0.242);
+    position: fixed;
+    border-radius: 1rem;
+
+    .min-and-max {
+      flex-direction: column;
+      display: flex;
+    }
+
+    .min-max {
+      justify-content: space-around;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 1rem;
+      background: linear-gradient(rgb(233, 233, 233), rgb(204, 204, 204));
+      padding-bottom: 0.8rem;
+      margin: 1rem;
+      width: 12rem;
+      height: 9rem;
+    }
+  }
+
+  .err {
+    color: rgb(255, 101, 101);
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 6rem;
+    height: 4rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+  }
+
+  .drag-n-drop {
+    display: grid;
+    min-width: 840px;
+    grid-template-columns: repeat(7, 110px);
+    height: 240rem;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    text-align: center;
+    z-index: 1;
+    background: black;
+    border-radius: 8px;
+    position: absolute;
+    visibility: visible;
+
+    @media screen and (max-width: $medium) {
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  .rnd-item {
+    min-height: 5rem;
+
+    color: rgb(4, 37, 28);
+    border-radius: 9px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    font-weight: bold;
+    box-shadow: 0.1rem 0.5rem 1rem rgba(0, 0, 0, 0.2),
+      0rem 0rem 0.2rem rgba(246, 254, 255, 0.2);
+  }
+
+  .rnd-blocked-time {
+    background: linear-gradient(
+      to bottom right,
+      rgb(248, 248, 248),
+      rgb(189, 189, 189)
+    );
+  }
+
+  .item-day {
+    margin-top: 0.4rem;
+  }
+
+  .item-time {
+    margin-top: 0.1rem;
+  }
+
+  .recurring-true {
+    background: linear-gradient(
+      to bottom right,
+      rgb(181, 246, 255),
+      rgb(131, 196, 204)
+    );
+  }
+
+  .drag-bottom {
+    background: rgb(48, 171, 241);
+    border-radius: 3px;
+  }
+
+  .delete-btn,
+  .recurring-btn {
+    position: absolute;
+    top: 0;
+    border: 3px solid rgba(51, 51, 51, 0);
+    background: rgb(9, 43, 88);
+    color: white;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      background: rgba(51, 51, 51, 0);
+      color: rgb(9, 43, 88);
+    }
+  }
+  .delete-btn {
+    right: 0;
+  }
+
+  .recurring-btn {
+    left: 0;
+  }
+
+  .labels {
+    margin-top: 1rem;
+    display: flex;
+    min-width: 840px;
+    transform: translateX(-50%) translateY(-4rem);
+    margin-left: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(20, 20, 20);
+    height: 3rem;
+    border-radius: 1rem;
+    padding-top: 0.5rem;
+
+    @media screen and (max-width: $medium) {
+      transform: translateX(0%) translateY(-4rem);
+      margin-left: 0%;
+    }
+
+    .day-label {
+      width: 120px;
+      text-align: center;
+      color: rgb(196, 196, 196);
+    }
+    .today-true {
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+    }
+  }
+  .time-grid {
+    display: flex;
+    width: 84rem;
+  }
+  .grid-time {
+    cursor: pointer;
+    width: 12rem;
+    height: 50px;
+    border: 3px solid black;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.425);
+    font-weight: bold;
+    user-select: none;
+  }
+
+  .grid-day {
+  }
+
+  .background {
+    min-width: 100%;
+  }
+
+  .weekshift-btns {
+    display: flex;
+    button {
+      height: 7rem;
+      padding: 0.5rem;
+      width: 7rem;
+      margin: 0.5rem;
+      border-radius: 1rem;
+      background: rgba(211, 211, 211, 0.814);
+      transition: all 0.3s ease;
+      &:hover {
+        background: lightgray;
+      }
+    }
+  }
+
+  .session {
+    .link {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(
+        to bottom right,
+        rgb(248, 248, 248),
+        rgb(189, 189, 189)
+      );
+
+      &:hover {
+        filter: invert(1);
+      }
+    }
+    .client-profile {
+      max-width: 100%;
+      display: block;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      height: 3.6rem;
+      width: 3.6rem;
+      border-radius: 4rem;
+      margin-top: 0.4rem;
+      border: 2px solid #222;
+      background: #222;
+    }
+  }
+}
+
+.mb-schedule {
+  background: rgb(68, 68, 68);
+  z-index: 0;
+  position: absolute;
+  display: none;
+  max-width: 100vw;
+  min-width: 100vw;
+  text-align: center;
+  padding-bottom: 30rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  @media screen and (max-width: $medium) {
+    display: inherit;
+  }
+
+  .time-picker {
+    color: black;
+    background-color: white;
+  }
+
+  .title {
+    font-size: 4rem;
+    color: #eee;
+  }
+  .mb-day {
+    color: rgb(255, 21, 21);
+    margin: 0.2rem;
+    background: linear-gradient(rgb(29, 29, 29), rgb(12, 12, 12));
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  .mb-block {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: rgb(143, 0, 0);
+    border: 2px solid rgb(155, 0, 0);
+    background: rgb(202, 202, 202);
+    margin: 0.4rem;
+  }
+  .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .addtime-form {
+    background: white;
+    border-radius: 1rem;
+    position: relative;
+  }
+  .timeinput {
+    .selectors {
+      display: flex;
+      padding: 1rem;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      justify-content: space-between;
+    }
+    .label {
+      margin-left: 50%;
+      margin-top: 1rem;
+      transform: translateX(-50%);
+      width: 80%;
+      border-radius: 1rem;
+      background: #222;
+    }
+  }
+}

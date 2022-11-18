@@ -1,0 +1,39 @@
+{
+  "name": "FITRA",
+  "version": "1.0.0",
+  "description": "A scheduler and video-chat platform for trainers, built with MERN and WebRTC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client-install": "npm install --prefix client",
+    "server-install": "npm install",
+    "install-all": "npm i concurrently; concurrently \"npm run server-install\" \"npm run client-install\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Thomas Foydel",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "google-auth-library": "^6.1.6",
+    "gridfs-stream": "^1.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.4.17",
+    "nodemon": "^2.0.7",
+    "socket.io": "^3.1.1",
+    "uuid": "^8.3.2"
+  }
+}

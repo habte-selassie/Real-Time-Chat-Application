@@ -1,0 +1,56 @@
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.57)),
+    url('../../imgs/weights.jpg');
+  max-height: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+  top: 0;
+
+  .landing-title {
+    opacity: 0.5;
+    font-size: 9rem;
+    line-height: 12rem;
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+    line-height: 10rem;
+    margin-top: 12rem;
+
+    @media screen and (max-width: $medium) {
+      font-size: 7rem;
+    }
+    @media screen and (max-width: $small) {
+      font-size: 5rem;
+      line-height: 9rem;
+    }
+  }
+
+  .trainers-link {
+    margin-top: 2rem;
+    padding: 2rem;
+    font-size: 3.4rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    background: rgb(233, 33, 33);
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    &:hover {
+      background: rgb(248, 88, 88);
+      color: rgb(68, 15, 15);
+      box-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.3);
+    }
+  }
+}

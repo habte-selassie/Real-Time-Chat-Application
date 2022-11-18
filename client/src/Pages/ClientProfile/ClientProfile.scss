@@ -1,0 +1,66 @@
+$small: 576px;
+$medium: 850px;
+$large: 992px;
+
+.clientprofile {
+  .email,
+  .bio {
+    font-size: 1.5rem;
+    overflow: scroll;
+    height: 2.5rem;
+  }
+  .bio {
+    margin-bottom: 1rem;
+  }
+  .name {
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    font-size: 4.5rem;
+    font-weight: bold;
+    letter-spacing: 0.4rem;
+  }
+  .cover-pic {
+    width: 100vw;
+    height: 100%;
+    background-position: top;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    padding-top: 2rem;
+    overflow: scroll;
+  }
+  .info {
+    margin-top: 10rem;
+    padding: 2rem 0;
+    background: rgba(255, 255, 255, 0.39);
+    text-align: center;
+    height: 48rem;
+  }
+  .profile-pic {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 20rem;
+    border: 12px solid hsl(0, 0%, 94%);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    background: rgb(240, 240, 240);
+  }
+
+  .link {
+    font-size: 1.8rem;
+    text-decoration: none;
+    background: rgba(230, 230, 230, 0.767);
+    padding: 0.4rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background: rgb(22, 22, 22);
+    color: #ddd;
+
+    &:hover {
+      background: rgb(51, 51, 51);
+    }
+  }
+}
